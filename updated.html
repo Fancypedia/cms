@@ -13,7 +13,7 @@
             <input readonly type="text" id="nomorId"  required><br><br>
 
             <label for="productName">Product Name:</label>
-            <input type="text" name="productName"  required><br><br>
+            <input type="text" id="productName" required><br><br>
 
             <label for="description">Description:</label>
             <input type="text" id="description"  required><br><br>
@@ -21,14 +21,18 @@
             <label for="price">Price:</label>
             <input type="number" id="price"  required><br><br>
 
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock"  required><br><br>
+            
             <label for="size">Size:</label>
             <input type="text" id="size"  required><br><br>
 
-            <label for="stock">Stock:</label>
-            <input type="number" id="stock"  required><br><br>
-
             <label for="imageURL">Image URL:</label>
             <input type="text" id="imageURL"  required><br><br>
+
+
+            <label for="status">Status:</label>
+            <input type="checkbox" id="status"><br><br>
 
             <button type="submit" onclick="updateProduct(event)">Update</button>
         </form>
@@ -36,16 +40,37 @@
 
     <script src="scriptupdated.js"></script>
     <script>
-         const searchParams = new URLSearchParams(window.location.search);
-    const id = searchParams.get("id");
-    const val = document.getElementById("nomorId");
-    val.value = id;
-    console.log(id);
-    
+        // value params
+        const searchParams = new URLSearchParams(window.location.search);
+        const id = searchParams.get("id");
+        const name = searchParams.get("name");
+        const description = searchParams.get("description");
+        const price = searchParams.get("price");
+        const stock = searchParams.get("stock");
+        const size = searchParams.get("size");
+        const image = searchParams.get("image");
+        const status = searchParams.get("status");
+
+        // change value form
+        const val = document.getElementById("nomorId").value = id;
+        const vallo = document.getElementById("productName").value = name;
+        const vallo2 = document.getElementById("description").value = description;
+        const vallo3 = document.getElementById("price").value = price;
+        const vallo4 = document.getElementById("stock").value = stock;
+        const vallo5 = document.getElementById("size").value = size;
+        const vallo6 = document.getElementById("imageURL").value = image;
+        const vallo7 = document.getElementById("status").value = status;
     const getById = async (id) => {
         try {
             const payload = {
                 nomorid: Number(id),
+                name: document.getElementById("productName").value,
+                description: document.getElementById("description").value,
+                price: Number(document.getElementById("price").value),
+                size: document.getElementById("size").value,
+                stock: Number(document.getElementById("stock").value),
+                image: document.getElementById("imageURL").value,
+                status: document.getElementById("status").value
             };
             const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/getproductid', {
                 method: 'POST',
@@ -57,6 +82,7 @@
 
             if (response.ok) {
                 const result = await response.json();
+                document.getElementById("productName").value = result.data.name;
                 console.log(result);
             } else {
                 const result = await response.json();

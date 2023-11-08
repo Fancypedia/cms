@@ -72,7 +72,7 @@ function displayProducts(products) {
       <td>${product.size}</td>
       <td><img src="${product.image}" alt="Product Image" style="width: 50px; height: 50px;"></td>
       <td>${product.status ? 'True' : 'False'}</td>
-      <td><a href="updated.html?id=${product.nomorid}">Edit</a></td>
+      <td><a href="updated.html?id=${product.nomorid}&name=${product.name}&description=${product.description}&price=${product.price}&stock=${product.stock}&size=${product.size}&image=${product.image}&status=${product.status}">Edit</a></td>
       <td><a href="delete.html?id=${product.nomorid}">Delete</a></td>
     `;
     tableBody.appendChild(row);
