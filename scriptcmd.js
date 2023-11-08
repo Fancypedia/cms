@@ -39,4 +39,17 @@ async function postData() {
     responseParagraph.textContent = JSON.stringify(result, null, 2); // Stringify the response for better display
     responseContainer.appendChild(responseParagraph);
   }
-  
+
+  function getData() {
+    fetch('https://us-central1-testlogin-366704.cloudfunctions.net/getAllcommned')
+    .then(response => {
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('data').innerHTML = data;
+    }
+    )
+    .catch(error => {
+        console.log('Error:', error);
+    });
+}

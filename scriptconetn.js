@@ -39,3 +39,33 @@ async function postData() {
     responseContainer.appendChild(responseParagraph);
   }
   
+
+  function getData() {
+    fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/bismillahcontentall')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Convert response to JSON format
+      })
+      .then(data => {
+        const dataTableBody = document.getElementById('data-table-body');
+        dataTableBody.innerHTML = '';
+  
+        data.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.ID}</td>
+            <td>${item.content}</td>
+            <td>${item.image}</td>
+            <td>${item.description}</td>
+          `;
+          dataTableBody.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+  
+  document.addEventListener('DOMContentLoaded', getData);

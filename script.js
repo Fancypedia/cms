@@ -1,42 +1,83 @@
-async function postData() {
-    const data = {
-      "id": parseInt(document.getElementById('id').value),
-      "Name": document.getElementById('name').value,
-      "Description": document.getElementById('description').value,
-      "Price": parseInt(document.getElementById('price').value),
-      "Size": document.getElementById('size').value,
-      "Stock": parseInt(document.getElementById('stock').value),
-      "Image": document.getElementById('image').value
-    };
-  
-    try {
-      const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/fixxlastppost', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-  
-      const result = await response.json();
-  
-      // Show product details after successful POST request
-      displayProduct(result);
-    } catch (error) {
-      console.error('Error:', error);
+function submitForm() {
+  const form = document.getElementById('productForm');
+  const payload = {
+    "Nomorid": parseInt(document.getElementById('Nomorid').value), // Mengonversi ke tipe int
+    "Name": document.getElementById('Name').value,
+    "Description": document.getElementById('Description').value,
+    "Price": parseFloat(document.getElementById('Price').value), // Mengonversi ke tipe float jika perlu
+    "Size": document.getElementById('Size').value,
+    "Stock": parseInt(document.getElementById('Stock').value), // Mengonversi ke tipe int
+    "Image": document.getElementById('Image').value,
+    "status": document.getElementById('status').checked
+  };
+
+  // ... (bagian fetch lainnya) ...
+  fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/createproduct', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
     }
-  }
-  
-  function displayProduct(product) {
-    document.getElementById('productId').textContent = product.id;
-    document.getElementById('productName').textContent = product.Name;
-    document.getElementById('productDescription').textContent = product.Description;
-    document.getElementById('productPrice').textContent = product.Price;
-    document.getElementById('productSize').textContent = product.Size;
-    document.getElementById('productStock').textContent = product.Stock;
-    document.getElementById('productImage').src = product.Image;
-  
-    // Show the product details section
-    document.querySelector('.product-display').style.display = 'block';
-  }
-  
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.text(); // Mengembalikan respon dalam bentuk teks
+    } else {
+      throw new Error('Gagal membuat produk'); // Melempar error jika respon tidak berhasil
+    }
+  })
+  .then(data => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Respon dari server: ' + data;
+    responseMessage.style.color = 'green'; // Menampilkan pesan sukses dalam warna hijau
+  })
+  .catch(error => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Error: ' + error;
+    responseMessage.style.color = 'red'; // Menampilkan pesan error dalam warna merah
+  });
+}
+
+
+// Fetch all products from the server
+function getProducts() {
+  fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/getallproduct')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === true) {
+        displayProducts(data.data);
+      } else {
+        console.error('Failed to fetch products');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Display products in the table
+function displayProducts(products) {
+  const tableBody = document.getElementById('productTableBody');
+  tableBody.innerHTML = '';
+
+  products.forEach(product => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${product.ID}</td>
+      <td>${product.nomorid}</td>
+      <td>${product.name}</td>
+      <td>${product.description}</td>
+      <td>${product.price}</td>
+      <td>${product.stock}</td>
+      <td>${product.size}</td>
+      <td><img src="${product.image}" alt="Product Image" style="width: 50px; height: 50px;"></td>
+      <td>${product.status ? 'True' : 'False'}</td>
+      <td><button onclick="editProduct('${product.ID}')">Edit</button></td>
+      <td><button onclick="deleteProduct('${product.ID}')">Delete</button></td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+// Fetch and display products on page load
+window.onload = getProducts;

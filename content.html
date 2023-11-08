@@ -13,11 +13,27 @@
     <input type="text" id="description" placeholder="Description">
     <button onclick="postData()">Create Content</button>
   </div>
-
+ 
+  
   <div id="response-container" class="response-container">
     <!-- Response will be displayed here -->
   </div>
-
+<div id="data">
+  <body onload="getData()"></body>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Image</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="data-table-body">
+      <!-- Data will be populated here -->
+    </tbody>
+  </table>
+</div>
   <script src="scriptconetn.js"></script>
 </body>
 </html>
