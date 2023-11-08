@@ -73,7 +73,7 @@ function displayProducts(products) {
       <td><img src="${product.image}" alt="Product Image" style="width: 50px; height: 50px;"></td>
       <td>${product.status ? 'True' : 'False'}</td>
       <td><button onclick="editProduct('${product.ID}')">Edit</button></td>
-      <td><button onclick="deleteProduct('${product.ID}')">Delete</button></td>
+      <td><a href="delete.html?id=${product.nomorid}">Delete</a></td>
     `;
     tableBody.appendChild(row);
   });
