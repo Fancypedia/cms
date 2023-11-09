@@ -8,6 +8,7 @@ async function updateProduct(event) {
     const size = document.getElementById('size').value;
     const stock = parseInt(document.getElementById('stock').value);
     const imageURL = document.getElementById('imageURL').value;
+    const status = document.getElementById('status').checked;
 
     const updatedProduct = {
         Nomorid: parseInt(nomorId),
@@ -17,7 +18,7 @@ async function updateProduct(event) {
         Size: size,
         Stock: stock,
         Image: imageURL,
-        status: true
+        status: status
     };
 
     try {

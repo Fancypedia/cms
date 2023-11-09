@@ -32,7 +32,7 @@
 
 
             <label for="status">Status:</label>
-            <input type="checkbox" id="status"><br><br>
+            <input type="checkbox" id="status" required><br><br>
 
             <button type="submit" onclick="updateProduct(event)">Update</button>
         </form>
@@ -59,44 +59,7 @@
         const vallo4 = document.getElementById("stock").value = stock;
         const vallo5 = document.getElementById("size").value = size;
         const vallo6 = document.getElementById("imageURL").value = image;
-        const vallo7 = document.getElementById("status").value = status;
-    const getById = async (id) => {
-        try {
-            const payload = {
-                nomorid: Number(id),
-                name: document.getElementById("productName").value,
-                description: document.getElementById("description").value,
-                price: Number(document.getElementById("price").value),
-                size: document.getElementById("size").value,
-                stock: Number(document.getElementById("stock").value),
-                image: document.getElementById("imageURL").value,
-                status: document.getElementById("status").value
-            };
-            const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/getproductid', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (response.ok) {
-                const result = await response.json();
-                document.getElementById("productName").value = result.data.name;
-                console.log(result);
-            } else {
-                const result = await response.json();
-                console.log(response);
-                throw new Error('Product update failed');
-            }
-        } catch (error) {
-            console.error('Error updating product:', error);
-            // alert('Product update failed. Please try again.');
-        }
-    }
-
-    // get id 
-    getById(id);
+        const vallo7 = document.getElementById("status").checked = status === 'true';
     </script>
 </body>
 </html>
