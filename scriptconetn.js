@@ -1,71 +1,68 @@
-async function postData() {
-    const data = {
-      "id": parseInt(document.getElementById('id').value),
-      "Content": document.getElementById('content').value,
-      "Image": document.getElementById('image').value,
-      "Description": document.getElementById('description').value
-    };
-  
-    try {
-      const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/createcontent', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-  
-      const result = await response.json();
-  
-      displayResponse(result); // Call function to display the response
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
-  
-  function displayResponse(result) {
-    const responseContainer = document.getElementById('response-container');
-  
-    // Clear previous content
-    responseContainer.innerHTML = '';
-  
-    // Create elements to display the response data
-    const responseHeader = document.createElement('h3');
-    responseHeader.textContent = 'Response from Create Content:';
-    responseContainer.appendChild(responseHeader);
-  
-    const responseParagraph = document.createElement('p');
-    responseParagraph.textContent = JSON.stringify(result, null, 2); // Stringify the response for better display
-    responseContainer.appendChild(responseParagraph);
-  }
-  
+window.onload = function() {
+  getProducts()
+}
+function submitForm() {
+  const form = document.getElementById('productForm');
+  const payload = {
+    "Id": parseInt(document.getElementById('Id').value), // Mengonversi ke tipe int
+    "Content": document.getElementById('Content').value,
+    "Image": document.getElementById('Image').value,
+    "Description": document.getElementById('Description').value,// Mengonversi ke tipe float jika perlu
+    "status": document.getElementById('status').checked
+  };
 
-  function getData() {
-    fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/bismillahcontentall')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+  // ... (bagian fetch lainnya) ...
+  fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/createcontent', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.text(); // Mengembalikan respon dalam bentuk teks
+    } else {
+      throw new Error('Gagal membuat produk'); // Melempar error jika respon tidak berhasil
+    }
+  })
+  .then(data => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Respon dari server: ' + data;
+    responseMessage.style.color = 'green'; // Menampilkan pesan sukses dalam warna hijau
+  })
+  .catch(error => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Error: ' + error;
+    responseMessage.style.color = 'red'; // Menampilkan pesan error dalam warna merah
+  });
+}
+
+
+// Fetch all products from the server
+function getProducts() {
+  fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/getallcontent')
+    .then(response => response.json())
+    .then(data => {
+    console.log(data)
+      if (data.status === true) {
+        document.getElementById('productTableBody').innerHTML =data.data.map((product, index) => {
+          return `<tr>
+            <td width="100">${index + 1}</td>
+            <td width="200">${product.id}</td>
+            <td>${product.content}</td>
+            <td style="width: 400px; word-break: break-all;">${product.image}</td>
+            <td>${product.description}</td>
+            <td>${product.status}</td>
+            <td><button onclick="deleteProduct(${product.Id})">Delete</button></td>
+          </tr>`;
         }
-        return response.json(); // Convert response to JSON format
-      })
-      .then(data => {
-        const dataTableBody = document.getElementById('data-table-body');
-        dataTableBody.innerHTML = '';
-  
-        data.forEach(item => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${item.ID}</td>
-            <td>${item.content}</td>
-            <td>${item.image}</td>
-            <td>${item.description}</td>
-          `;
-          dataTableBody.appendChild(row);
-        });
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  }
-  
-  document.addEventListener('DOMContentLoaded', getData);
+        ).join('');
+      } else {
+        console.error('Failed to fetch products');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+}

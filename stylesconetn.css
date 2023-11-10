@@ -1,39 +1,75 @@
-/* stylesconetn.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
 
-/* Styling for the data-form */
-.data-form {
-  width: 300px;
-  margin: 20px;
-  padding: 15px;
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input, button {
+  margin-bottom: 15px;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-/* Styling for the response container */
-.response-container {
-  margin: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-/* Styling for the data table */
-#data {
-  margin-top: 20px;
+button:hover {
+  background-color: #45a049;
 }
 
-#data table {
+
+/* CSS for the product table */
+
+.product-table-container {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+#productTable {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #ddd;
 }
 
-#data table th,
-#data table td {
-  border: 1px solid #ccc;
+#productTable th,
+#productTable td {
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-#data table th {
+#productTable th {
   background-color: #f2f2f2;
 }
+
+#productTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#productTable tbody tr:hover {
+  background-color: #f0f0f0;
+}
+  

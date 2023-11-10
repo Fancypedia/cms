@@ -2,38 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Content</title>
-  <link rel="stylesheet" href="stylesconetn.css">
+ <link rel="stylesheet" href="stylesconetn.css">
 </head>
 <body>
-  <div class="data-form">
-    <input type="number" id="id" placeholder="ID">
-    <input type="text" id="content" placeholder="Content">
-    <input type="text" id="image" placeholder="Image">
-    <input type="text" id="description" placeholder="Description">
-    <button onclick="postData()">Create Content</button>
+
+  <div class="form-container">
+  <h2>Create Content</h2>
+  <form id="productForm">
+    <label for="Id">Nomor ID:</label>
+    <input type="number" id="Id" name="Id" required>
+
+    <label for="Content">Nama Produk:</label>
+    <input type="text" id="Content" name="Content" required>
+
+    <label for="Image">URL Gambar:</label>
+    <input type="text" id="Image" name="Image" required>
+
+    <label for="Description">Deskripsi:</label>
+    <input type="text" id="Description" name="Description" required>
+
+    <label for="status">Status:</label>
+    <input type="checkbox" id="status" name="status" value="true">
+
+    <button type="button" onclick="submitForm()">Kirim</button>
+
+    <!-- Tambahkan elemen untuk menampilkan pesan respons -->
+    <div id="responseMessage" style="display: none;"></div>
+  </form>
+  <div class="product-table-container">
+    <h2>Daftar Content</h2>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Nomor ID</th>
+          <th>Nama Produk</th>
+          <th>Deskripsi</th>
+          <th>Gambar</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="productTableBody"></tbody>
+    </table>
   </div>
- 
-  
-  <div id="response-container" class="response-container">
-    <!-- Response will be displayed here -->
-  </div>
-<div id="data">
-  <body onload="getData()"></body>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Content</th>
-        <th>Image</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody id="data-table-body">
-      <!-- Data will be populated here -->
-    </tbody>
-  </table>
 </div>
-  <script src="scriptconetn.js"></script>
+
+<script src="scriptconetn.js">
+</script>
 </body>
 </html>
