@@ -58,7 +58,7 @@ function getProducts() {
             <td>${product.status}</td>
             
       <td><a href="deletecontent.html?id=${product.id}">Delete</a></td>
-      <td><a href="updated.html?id=${product.nomorid}&name=${product.name}&description=${product.description}&price=${product.price}&stock=${product.stock}&size=${product.size}&image=${product.image}&status=${product.status}">Edit</a></td>
+      <td><a href="editcontent.html?id=${product.id}&content=${product.content}&image=${product.image}&description=${product.description}&content=${product.content}&status=${product.status}">Edit</a></td>
          
       </tr>`;
         }

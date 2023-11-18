@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="stylesupdated.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Product</h1>
+        <form id="updateForm">
+            <label for="id">Product ID:</label>
+            <input readonly type="text" id="id"  required><br><br>
+
+            <label for="Content">Content:</label>
+            <input type="text" id="Content" required><br><br>
+
+            <label for="imageURL">Image URL:</label>
+            <input type="text" id="imageURL"  required><br><br>
+
+            <label for="Description">Description:</label>
+            <input type="text" id="Description"  required><br><br>
+    
+            <label for="status">Status:</label>
+            <input type="checkbox" id="status" required><br><br>
+
+            <button type="submit" onclick="updateProduct(event)">Update</button>
+        </form>
+    </div>
+
+    <script src="scriptupdatecontent.js"></script>
+    <script>
+        // value params
+        const searchParams = new URLSearchParams(window.location.search);
+        const id = searchParams.get("id");
+        const Content = searchParams.get("content");
+        const Description = searchParams.get("description");
+        const image = searchParams.get("image");
+        const status = searchParams.get("status");
+console.log(status);
+        // change value form
+        const val = document.getElementById("id").value = id;
+        const vallo5 = document.getElementById("Content").value = Content;
+        const vallo2 = document.getElementById("Description").value = Description;
+        const vallo6 = document.getElementById("imageURL").value = image;
+        const vallo7 = document.getElementById("status").checked = status === 'true';
+    </script>
+</body>
+</html>
