@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Product</title>
+  <link rel="stylesheet" href="stylesdelet.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Delete Product</h1>
+    <p>Enter Product ID to delete:</p>
+    <input readonly type="text" id="productID" placeholder="Enter Product ID">
+    <button onclick="deleteProduct()">Delete</button>
+    <p id="response"></p>
+  </div>
+
+  <script src="scriptdeletecontent.js"></script>
+  <script>
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
+    const val = document.getElementById("productID");
+    val.value = id;
+    console.log(id);
+  </script>
+</body>
+</html>

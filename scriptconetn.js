@@ -56,8 +56,11 @@ function getProducts() {
             <td style="width: 400px; word-break: break-all;">${product.image}</td>
             <td>${product.description}</td>
             <td>${product.status}</td>
-            <td><button onclick="deleteProduct(${product.Id})">Delete</button></td>
-          </tr>`;
+            
+      <td><a href="deletecontent.html?id=${product.id}">Delete</a></td>
+      <td><a href="updated.html?id=${product.nomorid}&name=${product.name}&description=${product.description}&price=${product.price}&stock=${product.stock}&size=${product.size}&image=${product.image}&status=${product.status}">Edit</a></td>
+         
+      </tr>`;
         }
         ).join('');
       } else {
@@ -65,4 +68,35 @@ function getProducts() {
       }
     })
     .catch(error => console.error('Error:', error));
+}
+
+function deleteProduct(productId) {
+  fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/deletecontent', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ "Id": productId })
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error('Failed to delete product');
+    }
+  })
+  .then(data => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Response from server: ' + data;
+    responseMessage.style.color = 'green';
+    // After deleting, refresh the product list
+    getProducts();
+  })
+  .catch(error => {
+    const responseMessage = document.getElementById('responseMessage');
+    responseMessage.style.display = 'block';
+    responseMessage.textContent = 'Error: ' + error;
+    responseMessage.style.color = 'red';
+  });
 }
