@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Event Data</title>
+</head>
+
+<body class="p-4">
+
+    <div id="app" class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Event Data</h1>
+
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="p-2 border bg-gray-200">ID</th>
+                    <th class="p-2 border">Title</th>
+                    <th class="p-2 border">Description</th>
+                    <th class="p-2 border">Tanggal</th>
+                    <th class="p-2 border">Image</th>
+                    <th class="p-2 border">Harga</th>
+                    <th class="p-2 border">Content ID</th>
+                    <th class="p-2 border">Content</th>
+                    <th class="p-2 border">Content Image</th>
+                    <th class="p-2 border">Content Description</th>
+                    <th class="p-2 border">Content Status</th>
+                    <th class="p-2 border">Product ID</th>
+                    <th class="p-2 border">Product Name</th>
+                    <th class="p-2 border">Product Description</th>
+                    <th class="p-2 border">Product Price</th>
+                    <th class="p-2 border">Product Stock</th>
+                    <th class="p-2 border">Product Size</th>
+                    <th class="p-2 border">Product Image</th>
+                    <th class="p-2 border">Product Status</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Use JavaScript to populate the table -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tbody = document.getElementById('tableBody');
+
+            // Fetch data using the Fetch API
+            fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/getalleventglobal')
+                .then(response => response.json())
+                .then(data => {
+                    data.data.forEach(event => {
+                        const row = document.createElement('tr');
+                        const content = event.content[0];
+                        const product = event.product[0];
+                        row.innerHTML = `
+                            <td class="p-2 border">${event.id}</td>
+                            <td class="p-2 border">${event.title}</td>
+                            <td class="p-2 border">${event.description}</td>
+                            <td class="p-2 border">${event.tanggal}</td>
+                            <td class="p-2 border">${event.image}</td>
+                            <td class="p-2 border">${event.harga}</td>
+                            <td class="p-2 border">${content.id}</td>
+                            <td class="p-2 border">${content.content}</td>
+                            <td class="p-2 border">${content.image}</td>
+                            <td class="p-2 border">${content.description}</td>
+                            <td class="p-2 border">${content.status ? 'Active' : 'Inactive'}</td>
+                            <td class="p-2 border">${product.ID}</td>
+                            <td class="p-2 border">${product.name}</td>
+                            <td class="p-2 border">${product.description}</td>
+                            <td class="p-2 border">${product.price}</td>
+                            <td class="p-2 border">${product.stock}</td>
+                            <td class="p-2 border">${product.size}</td>
+                            <td class="p-2 border">${product.image}</td>
+                            <td class="p-2 border">${product.status ? 'Active' : 'Inactive'}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+
+</body>
+
+</html>
