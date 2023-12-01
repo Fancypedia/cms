@@ -1,7 +1,7 @@
 import { getCookie } from "./cookies.js";
 
 export default function checkCookie() {
-    let token = getCookie("username");
+    let token = getCookie("token");
 	if (token != "") {
 	alert("Hi Welcome to Fancypedia");
 	} else {
