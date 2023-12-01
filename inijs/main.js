@@ -19,6 +19,14 @@ window.createBlog = createBlog;
 window.createKomen = createKomen;
 window.buatPRODUK = buatPRODUK;
 
+
+
+
+import Logout from "./logout.js";
+import checkCookie from "./checkCookie.js";
+
+window.Logout = Logout;
+window.checkCookie = checkCookie;
 // const myHeaders = new Headers();
 // let tokencookie = getCookie("token");
 // myHeaders.set("token", tokencookie);

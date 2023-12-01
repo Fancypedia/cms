@@ -19,8 +19,8 @@
 	-->
 </head>
 
-<body id="reportsPage">
-    <div class="" id="home">
+<body onload="checkCookie()">
+    <div id="reportsPage" class="" id="home">
         <nav class="navbar navbar-expand-xl">
 
             <!-- NAVBAR START -->
@@ -77,10 +77,18 @@
                                 Blog
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="./createComment.html">
                                 <i class="far fa-user"></i>
                                 Comment (Q & A)
+                            </a>
+                        </li>
+
+                        
+                        <li class="nav-item">
+                            <a onclick="Logout()" style="background-color: red;" class="nav-link" href="https://fancypedia.my.id/pages/signin/index.html">
+                                LOGOUT
                             </a>
                         </li>
                         <!-- <li class="nav-item">
@@ -411,6 +419,7 @@
             </div>
         </footer>
     </div>
+    </body>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
@@ -425,4 +434,8 @@
 
 
     <script type="module" src="index.js"></script>
+
+
+
+    <script type="module" src="./inijs/main.js"></script>
 </html>
