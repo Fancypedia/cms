@@ -8,7 +8,7 @@ async function postData() {
     };
   
     try {
-      const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/crreatecommnet1-1', {
+      const response = await fetch('https://asia-southeast2-testlogin-366704.cloudfunctions.net/createcommentt', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

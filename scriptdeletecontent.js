@@ -35,3 +35,10 @@ function deleteProduct() {
         document.getElementById('response').innerText = 'An error occurred, please try again.';
     });
 }
+
+
+const searchParams = new URLSearchParams(window.location.search);
+const id = searchParams.get("id");
+const val = document.getElementById("productID");
+val.value = id;
+console.log(id);

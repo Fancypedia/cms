@@ -33,3 +33,20 @@ async function updateProduct(event) {
         alert('Product update failed. Please try again.');
     }
 }
+
+
+// value params
+const searchParams = new URLSearchParams(window.location.search);
+const id = searchParams.get("id");
+const Content = searchParams.get("content");
+const Description = searchParams.get("description");
+const image = searchParams.get("image");
+const status = searchParams.get("status");
+console.log(status);
+// change value form
+const val = document.getElementById("id").value = id;
+const vallo5 = document.getElementById("Content").value = Content;
+const vallo2 = document.getElementById("Description").value = Description;
+const vallo6 = document.getElementById("imageURL").value = image;
+const vallo7 = document.getElementById("status").checked = status === 'true';
+console.log(vallo7);
