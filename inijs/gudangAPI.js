@@ -18,3 +18,4 @@ export let adminloginbaru = "https://asia-southeast2-testlogin-366704.cloudfunct
 
 export let createblogg = "https://asia-southeast2-testlogin-366704.cloudfunctions.net/createblogg";
 export let createcommentt = "https://asia-southeast2-testlogin-366704.cloudfunctions.net/createcommentt";
+export let createproductfix = "https://asia-southeast2-testlogin-366704.cloudfunctions.net/createproductfix";

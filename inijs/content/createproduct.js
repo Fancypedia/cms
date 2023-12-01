@@ -1,29 +1,28 @@
 import { postBiasa } from "../api.js";
 import { getValue } from "../element.js";
-import { createblogg } from "../gudangAPI.js";
+import { createproductfix } from "../gudangAPI.js";
 import { getCookie } from "../cookies.js";
 
 
-export default function createBlog(){
+export default function buatPRODUK(){
     // tokenstring = getCookie("token")
     let tokenkey = "token";
     let tokenvalue = getCookie("token");
 
 
     let datainjson = {
-        "id": parseInt(getValue("id")),
-        "content_one": getValue("contentone"),
-        "content_two": getValue("contenttwo"),
-        "image": getValue("image"),
-        // "title": getValue("title"),
-        // "title_two": getValue("titletwo"),
+        "ID": "000000000000000000000000",
+        "nomorid": parseInt(getValue("nomorid")),
+        "name": getValue("name"),
         "description": getValue("description"),
-        "description_two": getValue("description2"),
-        // "description_3": getValue("description3"),
+        "price": parseInt(getValue("price")),
+        "stock": parseInt(getValue("stock")),
+        "size": getValue("size"),
+        "image": getValue("image"),
         "status": true
     }
     
-    postBiasa(createblogg,datainjson,tokenkey,tokenvalue,responseData);
+    postBiasa(createproductfix,datainjson,tokenkey,tokenvalue,responseData);
 }
 
 function responseData(result) {

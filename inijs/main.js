@@ -11,11 +11,13 @@
 
 
 import createBlog from "./content/createblog.js";
-// import createComment from "./content/createcomment.js";
+import createKomen from "./content/createcomment.js";
+import buatPRODUK from "./content/createproduct.js";
 // import { getCookie } from "./cookies.js";
 
 window.createBlog = createBlog;
-// window.createComment = createComment;
+window.createKomen = createKomen;
+window.buatPRODUK = buatPRODUK;
 
 // const myHeaders = new Headers();
 // let tokencookie = getCookie("token");
