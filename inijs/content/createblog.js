@@ -12,8 +12,8 @@ export default function createBlog(){
 
     let datainjson = {
         "id": parseInt(getValue("id")),
-        "content_one": getValue("contentone"),
-        "content_two": getValue("contenttwo"),
+        "content_one": getValue("content_one"),
+        "content_two": getValue("content_two"),
         "image": getValue("image"),
         // "title": getValue("title"),
         // "title_two": getValue("titletwo"),
@@ -30,6 +30,6 @@ function responseData(result) {
 
     if (result.status == true) {
         alert("Berhasil Input Data");
-        window.location.href = "../getproduct.html";
+        window.location.href = "../getblog.html";
     }
 }

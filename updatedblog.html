@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Comment</title>
+    <link rel="stylesheet" href="stylesupdated.css">
+</head>
+<style>
+/* stylesupdated.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, checkbox {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog</title>
+    <link rel="stylesheet" href="stylesupdated.css">
+</head>
+<body>
+   
+    <div class="container">
+        <form id="updateForm" action="javascript:void(0);">
+            <label for="id">id</label>
+            <input readonly type="text" id="id"  required>
+
+            <label for="content_one">content_one</label>
+            <input type="text" id="content_one" required>
+
+            <label for="content_two">content_two</label>
+            <input type="text" id="content_two"  required>
+
+            <label for="image">image</label>
+            <input type="text" id="image"  required>
+
+            <label for="description">description</label>
+            <input type="text" id="description"  required>
+            
+            <label for="status">status</label>
+            <input type="checkbox" id="status" required>
+
+            <button type="submit" onclick="editBlog()">Update</button>
+        </form>
+    </div>
+
+    <script src="scriptupdatedblog.js"></script>
+    <script type="module" src="inijs/main.js"></script>
+</body>
+</html>
+

@@ -11,6 +11,7 @@
 
 import editProduct from "../scriptupdated2.js";
 import editComment from "../scriptupdatedcomment2.js";
+import editBlog from "../scriptupdatedblog2.js";
 
 
 
@@ -27,6 +28,7 @@ window.buatprodukkk = buatprodukkk;
 
 window.editProduct = editProduct;
 window.editComment = editComment;
+window.editBlog = editBlog;
 
 // window.updateProduct = updateProduct(event);
 

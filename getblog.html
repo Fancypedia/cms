@@ -154,31 +154,33 @@
             <button class="dropbtn">Blog/Catalog</button>
             <div class="dropdown-content">
                 <a href="./createBlog.html">Create Blog/Catalog</a>
-                <a href="#">Get/Update/Delete Catalog</a>
+                <a href="./getblog.html">Get/Update/Delete Catalog</a>
             </div>
         </div>
 
         <!-- Third Dropdown -->
         <div class="dropdown">
-            <button class="dropbtn">Dropdown 3</button>
+            <button class="dropbtn">Comment/FAQ</button>
             <div class="dropdown-content">
-                <a href="#">Option 1</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
+                <a href="./createComment.html">Create Comment/FAQ</a>
+                <a href="./getcomment.html">Get Comment/FAQ</a>
             </div>
         </div>
     </div>
 
     <div class="product-table-container">
-        <h2>Daftar Produk</h2>
+        <h2>Daftar Blog/Catalog</h2>
         <table id="productTable">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tanggal/th>
+                    <th>Tanggal</th>
                     <th>Judul</th>
                     <th>Gambar Produk</th>
                     <th>Sub Judul / Deskripsi</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody id="productTableBody"></tbody>
@@ -186,5 +188,5 @@
     </div>
 </body>
 
-<script  src="getproduct.js"></script>
+<script  src="getblog.js"></script>
 </html>
