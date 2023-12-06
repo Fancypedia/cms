@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        
+        .product-table-container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #productTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #productTable th, #productTable td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #productTable th {
+            background-color: #f2f2f2;
+        }
+
+        #productTableBody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        #productTableBody td img {
+            max-width: 50px;
+            max-height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        #productTableBody td:last-child, #productTableBody th:last-child {
+            text-align: center;
+        }
+
+        #productTableBody td:nth-child(9) {
+            color: green;
+        }
+
+        #productTableBody td:nth-child(10), #productTableBody td:nth-child(11) {
+            text-align: center;
+            cursor: pointer;
+            color: #007bff;
+        }
+
+        #productTableBody td:nth-child(10):hover, #productTableBody td:nth-child(11):hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <title>Product Table</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="./" class="active">Home</a>
+
+        <!-- First Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Content/Find Product</button>
+            <div class="dropdown-content">
+                <a href="./createProduct.html">Create Product</a>
+                <a href="./getproduct.html">Get/Update/Delete Product</a>
+            </div>
+        </div>
+
+        <!-- Second Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Blog/Catalog</button>
+            <div class="dropdown-content">
+                <a href="./createBlog.html">Create Blog/Catalog</a>
+                <a href="#">Get/Update/Delete Catalog</a>
+            </div>
+        </div>
+
+        <!-- Third Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown 3</button>
+            <div class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-table-container">
+        <h2>Daftar Comment/FAQ</h2>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Comment</th>
+                    <th>Questions</th>
+                    <th>Tanggal</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+        </table>
+    </div>
+</body>
+
+<script  src="getcomment.js"></script>
+</html>

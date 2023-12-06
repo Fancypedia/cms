@@ -1,19 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="WishFund,business,company,agency,multipurpose,modern,bootstrap4">
-  
-  <meta name="author" content="themefisher.com">
-    
-  <!-- theme meta -->
-  <meta name="theme-name" content="wishfund-bulma"/>
 
-  <title>Fancypedia</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Admin - Dashboard HTML Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <!-- https://fonts.google.com/specimen/Roboto -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/templatemo-style.css">
 
- <!-- bootstrap.min css -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/index.js"></script> -->
+    <!--
+	Product Admin CSS Template
+	https://templatemo.com/tm-524-product-admin
+	-->
+
+    <!-- bootstrap.min css -->
  <link rel="stylesheet" href="./plugins/bulma/bulma.min.css">
  <!-- Icon Font Css -->
  <link rel="stylesheet" href="./plugins/themify/css/themify-icons.css">
@@ -28,125 +35,267 @@
 
  <!-- Main Stylesheet -->
  <link rel="stylesheet" href="./inicss/style.css">
-
 </head>
 
-<body onload="checkCookie()"> 
+<body onload="checkCookie()">
+    <div id="reportsPage" class="" id="home">
+        <nav style="background-color: rgb(100, 97, 97);" class="navbar navbar-expand-xl">
 
-<div class="hero is-fullheight" style="background: #F8A556;">
-	<div class="hero-body">
-		<div class="container">
-			<div class="columns is-centered">
+            <!-- NAVBAR START -->
+            <div class="container h-100">
+                <a class="navbar-brand" href="index.html">
+                    <h1 class="tm-site-title mb-0">CMS Admin</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
 
-				<div class="column is-4">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
 
-					<!-- START FORM -->
-					<div id="signupForm" class="box">
+                        <li class="nav-item dropdown">
 
-						<div id="field-username" class="field">
-							<label class="label">id</label>
-							<div class="control has-icons-left">
-								<input id="id" name="id" type="number" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Product <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="./createProduct.html">Create Product</a>
+                                <a class="dropdown-item" href="./getproduct.html">Get Product</a>
+                            </div>
+                        </li>
 
-						<div id="field-username" class="field">
-							<label class="label">username</label>
-							<div class="control has-icons-left">
-								<input id="username" name="username" type="text" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                        
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./createBlog.html">
+                                <i class="far fa-user"></i>
+                                Blog
+                            </a>
+                        </li> -->
 
-						<div id="field-username" class="field">
-							<label class="label">comment</label>
-							<div class="control has-icons-left">
-								<input id="comment" name="comment" type="text" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                        <li class="nav-item dropdown">
 
-						<div id="field-username" class="field">
-							<label class="label">answer</label>
-							<div class="control has-icons-left">
-								<input id="answer" name="answer" type="text" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Blog <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="./createProduct.html">Create Blog/Catalog</a>
+                                <a class="dropdown-item" href="./getproduct.html">Get Blog/Catalog</a>
+                            </div>
+                        </li>
+                        
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./createComment.html">
+                                <i class="far fa-user"></i>
+                                Comment (Q & A)
+                            </a>
+                        </li> -->
 
-						<div id="field-username" class="field">
-							<label class="label">questions</label>
-							<div class="control has-icons-left">
-								<input id="questions" name="questions" type="text" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                        <li class="nav-item dropdown">
 
-						<div id="field-username" class="field">
-							<label class="label">tanggal</label>
-							<div class="control has-icons-left">
-								<input id="tanggal" name="tanggal" type="text" class="input" placeholder="isi" required>
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-file-alt"></i>
+                                <span>
+                                    Question (FAQ) <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="./createProduct.html">Create FAQ</a>
+                                <a class="dropdown-item" href="./getproduct.html">Get FAQ</a>
+                            </div>
+                        </li>
 
-						<div id="btnSignup" class="field">
-							<button onclick="createKomen()" class="button" type="submit"  style="background: #F8A556;">Submit </button>
-						</div>
+                        
+                        <li class="nav-item">
+                            <a onclick="Logout()" style="background-color: red;" class="nav-link" href="https://fancypedia.my.id/pages/signin/index.html">
+                                LOGOUT
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="https://fancypedia.github.io/adminDashboard/"  class="nav-link">
+                                Halaman Admin Dashboard
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="./content.html">
+                                <i class="far fa-user"></i>
+                                Content
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./eventglobal.html">
+                                <i class="far fa-user"></i>
+                                Event Global
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./event.html">
+                                <i class="far fa-user"></i>
+                                Event
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">
+                                <i class="far fa-user"></i>
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html">
+                                <i class="far fa-user"></i>
+                                Gallery
+                            </a>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cog"></i>
+                                <span>
+                                    Settings <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Billing</a>
+                                <a class="dropdown-item" href="#">Customize</a>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <!-- <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="login.html">
+                                Admin, <b>Logout</b>
+                            </a>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+            <!-- NAVBAR END -->
 
-					</div>
-					<!-- END FORM -->
+        </nav>
+        <div class="hero is-fullheight" style="background: #F8A556;">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered">
+        
+                        <div class="column is-4">
+        
+                            <!-- START FORM -->
+                            <div id="signupForm" class="box">
+        
+                                <div id="field-username" class="field">
+                                    <label class="label">id</label>
+                                    <div class="control has-icons-left">
+                                        <input id="id" name="id" type="number" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <div id="field-username" class="field">
+                                    <label class="label">username</label>
+                                    <div class="control has-icons-left">
+                                        <input id="username" name="username" type="text" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <div id="field-username" class="field">
+                                    <label class="label">comment</label>
+                                    <div class="control has-icons-left">
+                                        <input id="comment" name="comment" type="text" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <!-- <div id="field-username" class="field">
+                                    <label class="label">answer</label>
+                                    <div class="control has-icons-left">
+                                        <input id="answer" name="answer" type="text" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div> -->
+        
+                                <div id="field-username" class="field">
+                                    <label class="label">questions</label>
+                                    <div class="control has-icons-left">
+                                        <input id="questions" name="questions" type="text" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <div id="field-username" class="field">
+                                    <label class="label">tanggal</label>
+                                    <div class="control has-icons-left">
+                                        <input id="tanggal" name="tanggal" type="text" class="input" placeholder="isi" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+        
+                                <div id="btnSignup" class="field">
+                                    <button onclick="createKomen()" class="button" type="submit"  style="background: #F8A556;">Submit </button>
+                                </div>
+        
+                            </div>
+                            <!-- END FORM -->
+        
+                        </div>
+                    </div>
+        
+                    <a href="index.html" class="button is-info" style="position: absolute; top: 10px; left: 10px;">Back</a>
+                </div>
+            </div>
+        </div>
+        <footer class="tm-footer row tm-mt-small">
+            <div class="col-12 font-weight-light">
+                <p class="text-center text-white mb-0 px-4 small">
+                    Copyright &copy; <b>2023</b> All rights reserved. 
+                    
+                    Design: <a rel="nofollow noopener" class="tm-footer-link">Fancypedia</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    </body>
 
-				</div>
-			</div>
-
-			<a href="index.html" class="button is-info" style="position: absolute; top: 10px; left: 10px;">Back</a>
-		</div>
-	</div>
-</div>
-
-
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/moment.min.js"></script>
+    <!-- https://momentjs.com/ -->
+    <script src="js/Chart.min.js"></script>
+    <!-- http://www.chartjs.org/docs/latest/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="js/tooplate-scripts.js"></script>
     
-<!-- Main jQuery -->
-<script type="module" src="./plugins/jquery/jquery.js"></script>
-<script type="module" src="./inijstemplate/contact.js"></script>
-<!--  Magnific Popup-->
-<script type="module" src="./plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-<!-- Slick Slider -->
-<script type="module" src="./plugins/slick-carousel/slick/slick.min.js"></script>
-<!-- Counterup -->
-<script type="module" src="./plugins/counterup/jquery.waypoints.min.js"></script>
-<script type="module" src="./plugins/counterup/jquery.counterup.min.js"></script>
-
-<script type="module" src="./plugins/modal-video/jquery-modal-video.min.js"></script>
-
-<!-- Google Map -->
-<script type="module" src="./plugins/google-map/map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-
-<script type="module" src="./inijstemplate/script.js"></script>
 
 
-	<!-- JS YANG DIBUAT SENDIRI -->
-	<!-- <script type="module" src="../../js/main.js"></script> -->
-	<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.1.3/main.js"></script> -->
-	
+    <!-- <script type="module" src="index.js"></script> -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/index.js"></script> -->
 
-    <!-- <script type="module" src="/inijs/main.js"></script> -->
-    <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script>
 
-  </body>
-  </html>
+<!-- JS DIBUAT SENDIRI -->
+    <script type="module" src="./inijs/main.js"></script>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script> -->
+</html>

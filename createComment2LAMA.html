@@ -46,7 +46,7 @@
 						<div id="field-username" class="field">
 							<label class="label">id</label>
 							<div class="control has-icons-left">
-								<input id="id" name="id" type="number" class="input" placeholder="isi" >
+								<input id="id" name="id" type="number" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -54,9 +54,9 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">contentone (TANGGAL)</label>
+							<label class="label">username</label>
 							<div class="control has-icons-left">
-								<input id="contentone" name="contentone" type="text" class="input" placeholder="isi" >
+								<input id="username" name="username" type="text" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -64,9 +64,9 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">contenttwo (JUDUL)</label>
+							<label class="label">comment</label>
 							<div class="control has-icons-left">
-								<input id="contenttwo" name="contenttwo" type="text" class="input" placeholder="isi" >
+								<input id="comment" name="comment" type="text" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -74,67 +74,37 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">image (GAMBAR PRODUK)</label>
+							<label class="label">answer</label>
 							<div class="control has-icons-left">
-								<input id="image" name="image" type="text" class="input" placeholder="isi" >
+								<input id="answer" name="answer" type="text" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
 							</div>
 						</div>
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">title</label>
-							<div class="control has-icons-left">
-								<input id="title" name="title" type="text" class="input" placeholder="JANGAN DIISI" >
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">titletwo</label>
-							<div class="control has-icons-left">
-								<input id="titletwo" name="titletwo" type="text" class="input" placeholder="JANGAN DIISI" >
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
 
 						<div id="field-username" class="field">
-							<label class="label">description (SUB JUDUL/DESKRIPSI)</label>
+							<label class="label">questions</label>
 							<div class="control has-icons-left">
-								<input id="description" name="description" type="text" class="input" placeholder="isi" >
+								<input id="questions" name="questions" type="text" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
 							</div>
 						</div>
 
-						<!-- <div id="field-username" class="field">
-							<label class="label">description2 (BUTTON="LIHAT DESAIN")</label>
+						<div id="field-username" class="field">
+							<label class="label">tanggal</label>
 							<div class="control has-icons-left">
-								<input id="description2" name="description2" type="text" class="input" placeholder="isi">
+								<input id="tanggal" name="tanggal" type="text" class="input" placeholder="isi" required>
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
 							</div>
-						</div> -->
+						</div>
 
-						<!-- <div id="field-username" class="field">
-							<label class="label">description3</label>
-							<div class="control has-icons-left">
-								<input id="description3" name="description3" type="text" class="input" placeholder="JANGAN DIISI">
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
-						
 						<div id="btnSignup" class="field">
-							<button class="button" type="submit" onclick="createBlog()" style="background: #F8A556;">Create Blog/Catalog </button>
+							<button onclick="createKomen()" class="button" type="submit"  style="background: #F8A556;">Submit </button>
 						</div>
 
 					</div>
@@ -147,7 +117,7 @@
 		</div>
 	</div>
 </div>
-
+</body>
 
     
 <!-- Main jQuery -->
@@ -175,8 +145,8 @@
 	<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.1.3/main.js"></script> -->
 	
 
-<script type="module" src="./inijs/main.js"></script>
-<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script> -->
+    <!-- <script type="module" src="/inijs/main.js"></script> -->
+    <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script>
 
   </body>
   </html>

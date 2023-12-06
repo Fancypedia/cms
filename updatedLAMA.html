@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="stylesupdated.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Product</h1>
+        <form id="updateForm">
+            <label for="nomorId">Product ID:</label>
+            <input readonly type="text" id="nomorId"  required><br><br>
+
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" required><br><br>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description"  required><br><br>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price"  required><br><br>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock"  required><br><br>
+            
+            <label for="size">Size:</label>
+            <input type="text" id="size"  required><br><br>
+
+            <label for="imageURL">Image URL:</label>
+            <input type="text" id="imageURL"  required><br><br>
+
+
+            <label for="status">Status:</label>
+            <input type="checkbox" id="status" required><br><br>
+
+            <button type="submit" onclick="updateProduct(event)">Update</button>
+        </form>
+    </div>
+
+    <script src="scriptupdated.js"></script>
+    
+</body>
+</html>

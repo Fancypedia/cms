@@ -44,9 +44,9 @@
 					<div id="signupForm" class="box">
 
 						<div id="field-username" class="field">
-							<label class="label">id</label>
+							<label class="label">nomorid</label>
 							<div class="control has-icons-left">
-								<input id="id" name="id" type="number" class="input" placeholder="isi" >
+								<input id="idnomor" name="nomorid" type="number" class="input" placeholder="isi" >
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -54,9 +54,9 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">contentone (TANGGAL)</label>
+							<label class="label">name</label>
 							<div class="control has-icons-left">
-								<input id="contentone" name="contentone" type="text" class="input" placeholder="isi" >
+								<input id="nama" name="name" type="text" class="input" placeholder="isi" >
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -64,9 +64,9 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">contenttwo (JUDUL)</label>
+							<label class="label">description</label>
 							<div class="control has-icons-left">
-								<input id="contenttwo" name="contenttwo" type="text" class="input" placeholder="isi" >
+								<input id="deskripsi" name="description" type="text" class="input" placeholder="isi" >
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
@@ -74,71 +74,80 @@
 						</div>
 
 						<div id="field-username" class="field">
-							<label class="label">image (GAMBAR PRODUK)</label>
+							<label class="label">price</label>
 							<div class="control has-icons-left">
-								<input id="image" name="image" type="text" class="input" placeholder="isi" >
+								<input id="harga" name="price" type="number" class="input" placeholder="isi" >
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
 							</div>
 						</div>
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">title</label>
-							<div class="control has-icons-left">
-								<input id="title" name="title" type="text" class="input" placeholder="JANGAN DIISI" >
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">titletwo</label>
-							<div class="control has-icons-left">
-								<input id="titletwo" name="titletwo" type="text" class="input" placeholder="JANGAN DIISI" >
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
 
 						<div id="field-username" class="field">
-							<label class="label">description (SUB JUDUL/DESKRIPSI)</label>
+							<label class="label">size</label>
 							<div class="control has-icons-left">
-								<input id="description" name="description" type="text" class="input" placeholder="isi" >
+								<input id="ukuran" name="size" type="text" class="input" placeholder="isi" >
 								<span class="icon is-small is-left">
 									<i class="fa fa-envelope"></i>
 								</span>
 							</div>
 						</div>
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">description2 (BUTTON="LIHAT DESAIN")</label>
-							<div class="control has-icons-left">
-								<input id="description2" name="description2" type="text" class="input" placeholder="isi">
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
-
-						<!-- <div id="field-username" class="field">
-							<label class="label">description3</label>
-							<div class="control has-icons-left">
-								<input id="description3" name="description3" type="text" class="input" placeholder="JANGAN DIISI">
-								<span class="icon is-small is-left">
-									<i class="fa fa-envelope"></i>
-								</span>
-							</div>
-						</div> -->
 						
-						<div id="btnSignup" class="field">
-							<button class="button" type="submit" onclick="createBlog()" style="background: #F8A556;">Create Blog/Catalog </button>
+						<div id="field-username" class="field">
+							<label class="label">stock</label>
+							<div class="control has-icons-left">
+								<input id="stok" name="stock" type="number" class="input" placeholder="isi" >
+								<span class="icon is-small is-left">
+									<i class="fa fa-envelope"></i>
+								</span>
+							</div>
 						</div>
+
+						<div id="field-username" class="field">
+							<label class="label">image</label>
+							<div class="control has-icons-left">
+								<input id="gambar" name="image" type="text" class="input" placeholder="isi" >
+								<span class="icon is-small is-left">
+									<i class="fa fa-envelope"></i>
+								</span>
+							</div>
+						</div>
+
+						<!-- <div id="field-username" class="field">
+							<label for="status">status = </label>
+        					<input type="checkbox" id="status" name="status" value="aktif"> true
+						</div> -->
+
+						<div id="btnSignup" class="field">
+							<button onclick="buatprodukkk();" class="button" type="submit"  style="background: #F8A556;">Create Product/FindProduct </button>
+						</div>
+						<!-- <button onclick="buatprodukkk();">Create Product/FindProduct</button> -->
 
 					</div>
 					<!-- END FORM -->
+
+					<!-- <div class="product-table-container">
+						<h2>Daftar Produk</h2>
+						<table id="productTable">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nomor ID</th>
+									<th>Nama Produk</th>
+									<th>Deskripsi</th>
+									<th>Harga</th>
+									<th>Stok</th>
+									<th>Ukuran</th>
+									<th>Gambar</th>
+									<th>Status</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody id="productTableBody"></tbody>
+						</table>
+					</div> -->
+
 
 				</div>
 			</div>
@@ -148,8 +157,6 @@
 	</div>
 </div>
 
-
-    
 <!-- Main jQuery -->
 <script type="module" src="./plugins/jquery/jquery.js"></script>
 <script type="module" src="./inijstemplate/contact.js"></script>
@@ -175,8 +182,10 @@
 	<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.1.3/main.js"></script> -->
 	
 
-<script type="module" src="./inijs/main.js"></script>
-<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script> -->
+    <!-- <script type="module" src="/inijs/main.js"></script> -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Fancypedia/repojs@0.2.2/inijs/main.js"></script> -->
+    <!-- <script  src="getproduct.js"></script> -->
+    <script type="module" src="./inijs/main.js"></script>
 
   </body>
   </html>

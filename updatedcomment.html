@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update Product</title>
+    <title>Update Comment</title>
     <link rel="stylesheet" href="stylesupdated.css">
 </head>
 <style>
@@ -84,42 +84,36 @@ footer {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Product</title>
+    <title>Update Comment</title>
     <link rel="stylesheet" href="stylesupdated.css">
 </head>
 <body>
    
     <div class="container">
         <form id="updateForm" action="javascript:void(0);">
-            <label for="nomorId">Product ID:</label>
-            <input readonly type="text" id="nomorId"  required>
+            <label for="id">id:</label>
+            <input readonly type="text" id="id"  required>
 
-            <label for="productName">Product Name:</label>
-            <input type="text" id="productName" required>
+            <label for="username">username</label>
+            <input type="text" id="username" required>
 
-            <label for="description">Description:</label>
-            <input type="text" id="description"  required>
+            <label for="comment">comment</label>
+            <input type="text" id="comment"  required>
 
-            <label for="price">Price:</label>
-            <input type="number" id="price"  required>
+            <label for="questions">questions</label>
+            <input type="text" id="questions"  required>
 
-            <label for="stock">Stock:</label>
-            <input type="number" id="stock"  required>
+            <label for="tanggal">tanggal</label>
+            <input type="text" id="tanggal"  required>
             
-            <label for="size">Size:</label>
-            <input type="text" id="size"  required>
-
-            <label for="imageURL">Image URL:</label>
-            <input type="text" id="imageURL"  required>
-
             <label for="status">Status:</label>
             <input type="checkbox" id="status" required>
 
-            <button type="submit" onclick="editProduct()">Update</button>
+            <button type="submit" onclick="editComment()">Update</button>
         </form>
     </div>
 
-    <script src="scriptupdated.js"></script>
+    <script src="scriptupdatedcomment.js"></script>
     <script type="module" src="inijs/main.js"></script>
 </body>
 </html>
