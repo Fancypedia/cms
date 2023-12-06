@@ -26,7 +26,14 @@ export default function editBlog(){
 }
 
 function responseFunction(result) {
-    console.log(result.status)
+    if (result.status == true) {
+        alert('berhasil update')
+        console.log("Berhasil update")
+        window.location.href = "getblog.html";
+    } else {
+        alert('gagal update')
+        console.log("Gagal")
+    }
 }
 
 
