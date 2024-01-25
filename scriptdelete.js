@@ -22,8 +22,10 @@ function deleteProduct() {
       .then(response => {
         if (response.ok) {
           document.getElementById('response').innerText = 'Product deleted successfully';
+          alert('Product deleted successfully');
         } else {
           document.getElementById('response').innerText = 'Failed to delete product';
+          alert('Failed to delete product');
         }
       })
       .catch(error => {
